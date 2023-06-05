@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Quicksand:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  border-bottom: 1px solid rgb(151, 0, 0);
+  padding: 0.5rem;
+}
+
+.logo {
+  font-size: 1rem;
+  /* margin: 0.5rem; */
+  margin-left: 4rem;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-links li a:hover {
+  background-color: #ae000057;
+  transition: all 0.3s ease;
+  color: white;
+  border-radius: 2px;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #ae000057;
+  border-radius: 10px;
+}
+@media (max-width: 600px) {
+  .logo {
+    margin-left: 1rem;
+  }
+  .toggle-button {
+    display: flex;
+  }
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+}
+
+/* main page */
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.home-container {
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  padding: 2rem;
+}
+
+.flag {
+  width: 100%;
+  height: 50%;
+}
+
+.continent {
+  color: red;
+  font-size: smaller;
+}
+
+.countries-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 80vw;
+}
+
+.country-card {
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  height: 60vh;
+}
+
+.country-name {
+  font-size: large;
+}
+
+.languages {
+  color: gray;
+  font-size: small;
+}
+
+@media (max-width: 1000px) {
+  .countries-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .countries-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.show-more-btn {
+  border: none;
+  background-color: rgba(255, 87, 87, 0.555);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  margin-top: 3rem;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.show-more-btn:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+
+.google-maps-btn {
+  border: none;
+  background-color: rgba(255, 87, 87, 0.555);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-maps-btn:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+
+/*search page*/
+/* .search-input {
+  width: 80vw;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  font-size: large;
+} */
+form {
+  color: #555;
+  display: flex;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  width: 80vw;
+}
+
+input[type="search"] {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 7px 8px;
+  font-size: large;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  width: 75vw;
+}
+
+input[type="search"]::placeholder {
+  color: #bbb;
+}
+
+button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+button[type="submit"]:hover {
+  opacity: 1;
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #1183d6;
+  border-color: #1183d6;
+  outline: none;
+}
